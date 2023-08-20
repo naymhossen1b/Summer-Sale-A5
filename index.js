@@ -26,11 +26,13 @@ function applyCoupon(){
   }
 }
 
-
 document.getElementById('couponCode').addEventListener('keyup', function(event){
-
   const text = event.target.value;
-  const sellCuponDelite = document.getElementById('')
+  const deleteButton = document.getElementById('hide-btn');
+  if( text === 'SELL200' ){
+    deleteButton.removeAttribute('disabled');
+  }else{
+    deleteButton.setAttribute('disabled', true);
+  }
 })
-
 
