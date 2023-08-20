@@ -1,26 +1,40 @@
 let total = 0;
+let productCounter = 0;
 
 function clickItem(target) {
-
   const selectedItemContainer = document.getElementById("select-item");
   const itemName = target.childNodes[5].childNodes[1].innerText;
-  const li = document.createElement("li");
-  li.innerText = itemName;
-  selectedItemContainer.appendChild(li);
   const proDuctPrice = target.childNodes[5].childNodes[3].innerText.split(" ")[0];
   total = parseInt(total) + parseInt(proDuctPrice);
-  if(total > 0 ){
-  let purChesBtn = document.getElementById('make-purches');
-  purChesBtn.removeAttribute('disabled') 
-}
+
+  productCounter++;
+  const productName = document.createElement("p");
+  productName.innerText = `${productCounter}. ${itemName}`;
+  selectedItemContainer.appendChild(productName);
+
+  if (total > 0) {
+    let purChesBtn = document.getElementById('make-purches');
+    purChesBtn.removeAttribute('disabled');
+  }
+
   document.getElementById("orginal-price").innerText = total;
-
-
 }
-// console.log(total);
-// if(total > 0 ){
+// function clickItem(target) {
+
+//   const selectedItemContainer = document.getElementById("select-item");
+//   const itemName = target.childNodes[5].childNodes[1].innerText;
+//   const productName = document.createElement("p");  
+//   productName.innerText = itemName;
+//   selectedItemContainer.appendChild(productName);
+//   const proDuctPrice = target.childNodes[5].childNodes[3].innerText.split(" ")[0];
+//   total = parseInt(total) + parseInt(proDuctPrice);
+
+//   if(total > 0 ){
 //   let purChesBtn = document.getElementById('make-purches');
 //   purChesBtn.removeAttribute('disabled') 
+// }
+
+//   document.getElementById("orginal-price").innerText = total;
 // }
 
 function applyCoupon(){
@@ -29,8 +43,11 @@ function applyCoupon(){
     const discountParcentage = 20;
     const discount = (total * discountParcentage) / 100;
     const finalAmount = total - discount;
+    const toDecimale = finalAmount.toFixed(2);
+
+
     document.getElementById("discountAmount").textContent = discount;
-    document.getElementById("finalAmount").textContent = finalAmount;
+    document.getElementById("finalAmount").textContent = toDecimale;
   }else{
     alert("Coupon code is not valid or minimum amount not valide");
   }
