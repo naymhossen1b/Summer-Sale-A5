@@ -9,9 +9,19 @@ function clickItem(target) {
   selectedItemContainer.appendChild(li);
   const proDuctPrice = target.childNodes[5].childNodes[3].innerText.split(" ")[0];
   total = parseInt(total) + parseInt(proDuctPrice);
+  if(total > 0 ){
+  let purChesBtn = document.getElementById('make-purches');
+  purChesBtn.removeAttribute('disabled') 
+}
   document.getElementById("orginal-price").innerText = total;
 
+
 }
+// console.log(total);
+// if(total > 0 ){
+//   let purChesBtn = document.getElementById('make-purches');
+//   purChesBtn.removeAttribute('disabled') 
+// }
 
 function applyCoupon(){
   const couponCode = document.getElementById("couponCode").value;
@@ -35,4 +45,8 @@ document.getElementById('couponCode').addEventListener('keyup', function(event){
     deleteButton.setAttribute('disabled', true);
   }
 })
+
+function navigateBtn(){
+  location.reload();
+}
 

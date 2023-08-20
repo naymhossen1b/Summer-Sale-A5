@@ -45,14 +45,14 @@
             <!-- Kitchenware section start-->
 
 
-            <div class="mt-14 grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+            <div class="mt-14 grid lg:grid-cols-3 md:grid-cols-2 gap-5">
 
                 <!-- card 1 -->
 
                 
                     <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl hover:cursor-pointer">
                         <div class="w-11/12 mx-auto rounded-xl">
-                            <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
+                            <figure class="bg-gray-700 bg-opacity-5 pb-12 pt-10">
                                 <img src="./images/prod1.png" alt="Shoes" /></figure>
                         </div>
                         <div class="rating mt-14 mb-4 flex justify-center items-baseline">
@@ -91,7 +91,7 @@
 
                 <div onclick="clickItem(this)" class="card hover:cursor-pointer bg-base-100 shadow-xl">
                     <div class="w-11/12 mx-auto rounded-xl">
-                        <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
+                        <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-12">
                             <img src="./images/prod3.png" alt="Shoes" /></figure>
                     </div>
                     <div class="rating mt-14 mb-4 flex justify-center items-baseline">
@@ -121,14 +121,14 @@
             <!-- Kitchenware section start-->
 
 
-            <div class="mt-14 grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+            <div class="mt-14 grid lg:grid-cols-3 md:grid-cols-2 gap-5">
 
                 <!-- card 1 -->
 
                 
                     <div onclick="clickItem(this)" class="hover:cursor-pointer card bg-base-100 shadow-xl">
                         <div class="w-11/12 mx-auto rounded-xl">
-                            <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
+                            <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-14">
                                 <img src="./images/prod4.png" alt="Shoes" /></figure>
                         </div>
                         <div class="rating mt-14 mb-4 flex justify-center items-baseline">
@@ -200,7 +200,7 @@
             <!-- Kitchenware section start-->
 
 
-            <div class="mt-14 grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+            <div class="mt-14 grid lg:grid-cols-3 md:grid-cols-2 gap-5">
 
                 <!-- card 1 -->
 
@@ -228,7 +228,7 @@
 
                 <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl hover:cursor-pointer">
                     <div class="w-11/12 mx-auto rounded-xl">
-                        <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
+                        <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-12">
                             <img src="./images/prod8.png" alt="Shoes" /></figure>
                     </div>
                     <div class="rating mt-14 mb-4 flex justify-center items-baseline">
@@ -248,7 +248,7 @@
 
                 <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl hover:cursor-pointer">
                     <div class="w-11/12 mx-auto rounded-xl">
-                        <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
+                        <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-12">
                             <img src="./images/prod9.png" alt="Shoes" /></figure>
                     </div>
                     <div class="rating mt-14 mb-4 flex justify-center items-baseline">
@@ -296,7 +296,28 @@
                 </div>
 
                 <div>
-                    <button class="text-white text-2xl font-medium bg-[#E527B2] py-2 px-5 rounded-xl">Make Purchase</button>
+                    <button id="make-purches"  disabled class="text-white text-2xl font-medium bg-[#E527B2] py-2 px-5 rounded-xl" onclick="my_modal_1.showModal()">Make Purchase</button>
+                    <dialog id="my_modal_1" class="modal">
+                      <form method="dialog" class="modal-box">
+                        <div class="items-center text-center">
+                          <div class="flex justify-center">
+                            <img src="./images/congo.png" alt="">
+                            </div>
+                        <h3 class="font-bold text-5xl mt-3">Congratulations</h3>
+                        <p class="py-4">Your Purchase the product</p>
+                        
+                        <!--pop up button -->
+
+                        <div class="flex justify-center items-center gap-4 mt-3 mb-4">
+                          <div> 
+                            <button onclick="navigateBtn()" class="btn rounded-lg text-white bg-[#E527B2]">Go Home</button>
+                          </div>              
+                        </div>
+                        </div>
+                      </form>
+                    </dialog>
+                      </div>
+                    </div>
                 </div>
 
             </div>
