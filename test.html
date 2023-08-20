@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cart</title>
+    <style>
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+        #cart {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="product">
+        <h3>Product 1</h3>
+        <p>Price: 100 taka</p>
+        <button onclick="addToCart(100)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h3>Product 2</h3>
+        <p>Price: 150 taka</p>
+        <button onclick="addToCart(150)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h3>Product 3</h3>
+        <p>Price: 80 taka</p>
+        <button onclick="addToCart(80)">Add to Cart</button>
+    </div>
+
+    <div id="cart">
+        <h2>Cart</h2>
+        <p>Total Price: <span id="totalPrice">0</span> taka</p>
+        <input type="text" id="couponCode" placeholder="Enter coupon code">
+        <button onclick="applyCoupon()">Apply Coupon</button>
+        <p>Discount: <span id="discountAmount">0</span> taka</p>
+        <p>Final Amount: <span id="finalAmount">0</span> taka</p>
+    </div>
+
+    <script>
+        let cartTotal = 0;
+
+        function addToCart(price) {
+            cartTotal += price;
+            document.getElementById("totalPrice").textContent = cartTotal;
+        }
+
+        function applyCoupon() {
+            const couponCode = document.getElementById("couponCode").value;
+            if (couponCode === "SELL200" && cartTotal > 200) {
+                const discount = 50; // Assuming the discount amount is 50 taka
+                const finalAmount = cartTotal - discount;
+                document.getElementById("discountAmount").textContent = discount;
+                document.getElementById("finalAmount").textContent = finalAmount;
+            } else {
+                alert("Coupon code is not valid or minimum cart value not met.");
+            }
+        }
+    </script>
+</body>
+</html>

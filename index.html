@@ -50,7 +50,7 @@
                 <!-- card 1 -->
 
                 
-                    <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                    <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl hover:cursor-pointer">
                         <div class="w-11/12 mx-auto rounded-xl">
                             <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                                 <img src="./images/prod1.png" alt="Shoes" /></figure>
@@ -70,7 +70,7 @@
                 </div>
 
                 <!-- card 2 -->
-                    <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                    <div onclick="clickItem(this)" class="card hover:cursor-pointer bg-base-100 shadow-xl">
                         <div class="w-11/12 mx-auto rounded-xl">
                             <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                                 <img src="./images/prod2.png" alt="Shoes" /></figure>
@@ -89,7 +89,7 @@
                 </div>
                 <!-- card 3 -->
 
-                <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                <div onclick="clickItem(this)" class="card hover:cursor-pointer bg-base-100 shadow-xl">
                     <div class="w-11/12 mx-auto rounded-xl">
                         <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                             <img src="./images/prod3.png" alt="Shoes" /></figure>
@@ -126,7 +126,7 @@
                 <!-- card 1 -->
 
                 
-                    <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                    <div onclick="clickItem(this)" class="hover:cursor-pointer card bg-base-100 shadow-xl">
                         <div class="w-11/12 mx-auto rounded-xl">
                             <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                                 <img src="./images/prod4.png" alt="Shoes" /></figure>
@@ -147,7 +147,7 @@
 
                 <!-- card 2 -->
 
-                <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                <div onclick="clickItem(this)" class="hover:cursor-pointer card bg-base-100 shadow-xl">
                     <div class="w-11/12 mx-auto rounded-xl">
                         <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                             <img src="./images/prod5.png" alt="Shoes" /></figure>
@@ -167,7 +167,7 @@
             </div>
                 <!-- card 3 -->
 
-                <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                <div onclick="clickItem(this)" class="hover:cursor-pointer card bg-base-100 shadow-xl">
                     <div class="w-11/12 mx-auto rounded-xl">
                         <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                             <img src="./images/prod6.png" alt="Shoes" /></figure>
@@ -205,7 +205,7 @@
                 <!-- card 1 -->
 
                 
-                    <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                    <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl hover:cursor-pointer">
                         <div class="w-11/12 mx-auto rounded-xl">
                             <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                                 <img src="./images/prod7.png" alt="Shoes" /></figure>
@@ -226,7 +226,7 @@
 
                 <!-- card 2 -->
 
-                <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl hover:cursor-pointer">
                     <div class="w-11/12 mx-auto rounded-xl">
                         <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                             <img src="./images/prod8.png" alt="Shoes" /></figure>
@@ -246,7 +246,7 @@
             </div>
                 <!-- card 3 -->
 
-                <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl">
+                <div onclick="clickItem(this)" class="card bg-base-100 shadow-xl hover:cursor-pointer">
                     <div class="w-11/12 mx-auto rounded-xl">
                         <figure class="bg-gray-700 bg-opacity-5 pb-10 pt-10">
                             <img src="./images/prod9.png" alt="Shoes" /></figure>
@@ -280,8 +280,8 @@
                     <h1 class="text-black text-2xl font-medium">Have coupon?</h1>
 
                     <div class="lg:flex">
-                        <input class="p-4 mt-5 rounded-lg" type="text" placeholder="Coupon code">
-                    <button class="text-white mt-5 text-2xl font-medium bg-pink-600 rounded-t-lg p-3 rounded-r-lg rounded-b-lg rounded-l-none">Apply</button>
+                        <input id="couponCode" class="p-4 mt-5 rounded-lg" type="text" placeholder="Coupon code">
+                        <button id="hide-btn" onclick="applyCoupon()" class="text-white mt-5 text-2xl font-medium bg-pink-600 rounded-t-lg p-3 rounded-r-lg rounded-b-lg rounded-l-none">Apply</button>
                     </div>
                 </div>
 
@@ -290,9 +290,9 @@
                 </div>
 
                 <div class="text-black text-2xl font-medium mt-5">
-                    <h1 class="mb-5">Total price: <span id="total">00</span>TK</h1>
-                    <h2 class="mb-5">Discount : 00TK</h2>
-                    <h3 class="mb-5">Total: 00 TK</h3>
+                    <h1 class="mb-5">Total price: <span id="orginal-price">0</span>TK</h1>
+                    <h2 class="mb-5">Discount : <span id="discountAmount">0</span>TK</h2>
+                    <h3 class="mb-5">Total: <span id="finalAmount">0</span> TK</h3>
                 </div>
 
                 <div>
